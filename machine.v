@@ -51,25 +51,11 @@ fn (mut m Machine) display_rolls(k int) {
 	}
 }
 
-fn (m Machine) display_encoding_state(j int) {
-	for i in 0 .. m.w {
-		if i == j {
-			start_reverse_text()
-		}
-		print_symbol(m.r[i])
-		if i == j {
-			stop_reverse_text()
-		}
-	}
+fn (m Machine) display_encoding_state(j int, s bool) {
+	print_symbols_one_reversed(m.r,j,s)
 	print('   ')
-	for i in 0 .. m.w {
-		if i == j {
-			start_reverse_text()
-		}
-		print_symbol(m.k[i])
-		if i == j {
-			stop_reverse_text()
-		}
-	}
-	println('')
+	print_symbols_one_reversed(m.k,j,s)
+	print('\n')
 }
+
+

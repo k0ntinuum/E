@@ -1,6 +1,8 @@
 fn main() {
 	// k := key(2,7)
-	mut m := square_machine(3, 4)
-	m.test_encode(128)
-	m.test_encrypt(64 , 40)
+	cls()
+	move_cursor(0,10)
+	mut m := square_machine(2, 6)
+	m.test_encode(32)
+	//m.test_encrypt(64 , 40)
 }
