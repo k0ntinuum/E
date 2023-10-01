@@ -1,8 +1,8 @@
-fn (mut m Machine) encode(p []Symbol, demo bool ) []Symbol {
+fn (mut m Machine) encode(p []Symbol, demo bool) []Symbol {
 	mut c := []Symbol{}
 	for i in 0 .. p.len {
 		if demo {
-			m.display_encoding_state(i%m.r.len)
+			m.display_encoding_state(i % m.r.len)
 		}
 		m.roll()
 		c << mod(m.r[0] + p[i], m.s)
@@ -11,17 +11,17 @@ fn (mut m Machine) encode(p []Symbol, demo bool ) []Symbol {
 		m.r[x] = mod(m.r[x] + p[i], m.s)
 	}
 	if demo {
-			println("")
+		println('')
 	}
 
 	return c
 }
 
-fn (mut m Machine) decode(c []Symbol, demo bool ) []Symbol {
+fn (mut m Machine) decode(c []Symbol, demo bool) []Symbol {
 	mut p := []Symbol{}
 	for i in 0 .. c.len {
 		if demo {
-			m.display_encoding_state(i%m.r.len)
+			m.display_encoding_state(i % m.r.len)
 		}
 		m.roll()
 		p << mod(c[i] - m.r[0], m.s)
@@ -30,8 +30,7 @@ fn (mut m Machine) decode(c []Symbol, demo bool ) []Symbol {
 		m.r[x] = mod(m.r[x] + p[i], m.s)
 	}
 	if demo {
-		println("")
+		println('')
 	}
 	return p
 }
-

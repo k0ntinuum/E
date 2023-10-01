@@ -1,22 +1,19 @@
 fn (mut m Machine) test_encode(l int) {
 	println('\nENCODING TEST for ')
 	print_symbols(m.k_)
-	//m.display_encoding_state(-1)
 	println('')
 	p := random_symbols(l, u64(m.s))
 	m.reset()
-	c := m.encode(p,true)
+	c := m.encode(p, true)
 	m.reset()
 	d := m.decode(c, false)
 	m.reset()
-	//print('p : ')
+	println('\nsummary')
 	print_symbols(p)
-	//print('c : ')
 	print_symbols(c)
-	//print('d : ')
 	print_symbols(d)
 	if same(p, d) {
-		println('SUCCESS      p != c : ${count(p,c):3}/${l:-}  \n')
+		println('success      p != c :  ${count(p, c):3}/${l}  \n')
 	} else {
 		println('FAILURE\n')
 	}

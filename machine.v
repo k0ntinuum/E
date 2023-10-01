@@ -61,7 +61,7 @@ fn (m Machine) display_encoding_state(j int) {
 			stop_reverse_text()
 		}
 	}
-	print("   ")
+	print('   ')
 	for i in 0 .. m.w {
 		if i == j {
 			start_reverse_text()
@@ -71,5 +71,5 @@ fn (m Machine) display_encoding_state(j int) {
 			stop_reverse_text()
 		}
 	}
-	println("")
+	println('')
 }

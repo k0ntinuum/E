@@ -1,4 +1,5 @@
 import math
+
 fn (m Machine) cell_code(i int) int {
 	mut y := i64(0)
 	c := i - m.n / 2
@@ -8,6 +9,7 @@ fn (m Machine) cell_code(i int) int {
 	}
 	return int(y)
 }
+
 fn mod(x int, m int) int {
 	mut y := x
 	for y > m - 1 {
